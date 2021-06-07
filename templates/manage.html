@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Admin</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: table
+        }
+        #content {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h3{
+            margin-top: -20px;
+            margin-bottom: 20px;
+        }
+
+        .first{
+            margin-right: 10px;
+        }
+
+        .second{
+            margin-left: 10px;
+        }
+
+        body{
+            background: #1CD8D2;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #93EDC7, #1CD8D2);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #93EDC7, #1CD8D2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+    </style>
+    <body>
+        <div id="content">
+            <h3>This is the Admin page</h3>
+            <a class="first" href="{% url 'add_project' %}"><button type="button" class="btn btn-outline-info" >Add new</button></a>
+            <a class="second" href="{% url 'table' %}"><button type="button" class="btn btn-outline-info" >View all</button></a>
+        </div>
+    </body>
+</html>
+
+
+
+

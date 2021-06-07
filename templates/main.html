@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/scroller.css' %}" />
+  </head>
+  <body>
+    <header id="home">
+      <!-- navbar -->
+      <nav id="nav">
+        <div class="nav-center">
+          <!-- nav header -->
+          <div class="nav-header">
+            
+            <button class="nav-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <!-- links -->
+          <div class="links-container">
+            <ul class="links">
+              <li>
+                <a href="#home" class="scroll-link">home</a>
+              </li>
+              <li>
+                <a href="#about" class="scroll-link">Projects</a>
+              </li>
+              <li>
+                <a href="#services" class="scroll-link">About Us</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li>
+                <a href="{% url 'logout' %}" >Logout</a>
+              {% endif %}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- banner -->
+      {% comment %} <div class="banner">
+        <div class="container nayatemp">
+          <h1 >Heading of the page</h1>
+          <p class="nayatemp">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas eos
+            neque sunt in? Id, necessitatibus quos quisquam distinctio
+            laudantium fugiat?
+          </p>
+          <a href="#about" class="scroll-link btn btn-white">Projects</a>
+        </div>
+      </div> {% endcomment %}
+    </header>
+    <!-- about -->
+    <section id="about" class="section temp">
+          <div class="title">
+                <h2>my <span>projects</span></h2>
+                <div class="row">
+                      {% for proj in projs %}
+                      <div class="col-md-4" ontouchstart="this.classList.toggle('hover');">
+                            <div class="containers">
+                                  <div class="front burhan">
+                                        <img src="{{proj.image.url}}" class="front-image">
+                                  </div>
+                                  <div class="back" style="color: black;">
+                                        <div class="inner" style="color: black;">
+                                              <p>Description: {{ proj.description }}</p>
+                                              <p>Work: {{ proj.work }}</p>
+                                              <p>Software: {{ proj.software }} </p>
+                                        </div>
+                                  </div>
+                            </div> 
+                      </div>
+                      {% endfor %}
+                </div> 
+          </div>
+    </section>
+    {% for about in abouts %}
+    <section id="services" class="section">
+      <div class="title">
+        <h2>about <span>me</span></h2>
+        <div class="container">
+        <div class="row">
+            <div class="col-md-4 left">
+                <img class="about-image" src="{{about.image.url}}" alt="Jane" style="width:100%">
+              </div>
+            <div class="col-md-8">
+            <br>
+              <h3 class="about-name">
+                Naqiya Motorwala
+              </h3>
+              <br><br>
+              <div style="white-space: pre-wrap;">{{ about.describe }}<a href="{% url 'login' %}" id="hyper" >.</a></div>
+            </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    {% endfor %}
+    <!-- footer -->
+    <footer >
+      <p>
+        copyright &copy; capweb
+        <span id="date"></span>. all rights reserved
+      </p>
+    </footer>
+    <a class="scroll-link top-link" href="#home">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+    <!-- javascript -->
+    <script src="{% static 'js/scroller.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Burhan</title>
+        </head>
+    <body>
+        <div>
+            <p>HELLO WORLD</p>
+            {% for proj in projs %}
+            <div>
+              <img src="{{proj.image.url}}"
+              <p class="data">{{ proj.description }}</p>
+              <p class="data">{{ proj.work }}</p>
+              <p class="data"> {{ proj.software }}/-</p>
+            </div>
+            {% endfor %} 
+        </div>
+        <a href="{% url 'add_project' %}"><button >Add new</button></a>
+    </body>
+</html>

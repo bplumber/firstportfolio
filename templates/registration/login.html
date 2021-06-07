@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+</head>
+<style>
+    body  
+    {  
+        margin: 0;  
+        padding: 0;  
+        background: #1CD8D2;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #93EDC7, #1CD8D2);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #93EDC7, #1CD8D2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    }  
+    .login{  
+            width: 350px;  
+            overflow: hidden;  
+            margin: auto;  
+           padding: 50px;
+            border: 1px solid black;
+            border-radius: 15px ;
+           
+            
+    }  
+    h2{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    font-family: 'Lobster', cursive;
+    text-align: center;  
+    padding: 10px;
+}
+  
+     
+    #log{  
+        width: 100px;  
+        height: 30px;  
+        border: none;  
+        border-radius: 5px;  
+        padding-left: 7px;  
+        color: blue; 
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+        margin-left: 140px;
+    }
+    .center{
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+    }
+    .main{
+        padding-bottom:340px;
+    }  
+     
+</style>
+<body>
+<div class="main">
+    <h2>Login Page</h2><br>
+    {% if form.errors %}
+    <p>There's something wrong with what you entered!</p>
+    {% endif %}
+    <div class="login form-group"> 
+    <form method="post" action="{% url 'login' %}" >
+    <div class="center">
+        {% csrf_token %}
+
+        <p >Username: {{ form.username }}</p>
+        <p >Password: {{ form.password }}</p>
+
+        <p><input type="submit" = value="Login" class="btn btn-primary"></p>
+    </div>
+    </form>
+    </div>
+<div>
+</body>
+</html>
