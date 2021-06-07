@@ -676,3 +676,12 @@ footer p {
   .nayatemp{
     color:#474787;
   }
+
+ @media screen and (max-width: 600px) {
+    .left{
+      padding-left: 230px;
+    }
+    .col-md-8{
+      padding-right: 75px;
+    }
+  }
