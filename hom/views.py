@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Backdrop, projects, About
+from .models import projects, About
 from .forms import ProjectForm, GeeksForm
 from django.shortcuts import get_object_or_404
 from django.views.generic.edit import DeleteView
@@ -11,8 +11,7 @@ from django.shortcuts import (get_object_or_404,
 def home(request):
     projs = projects.objects.all()
     abouts = About.objects.all()
-    backs = Backdrop.objects.all()
-    return render(request, 'main.html', {'projs':  projs, 'abouts':abouts, 'backs':backs})
+    return render(request, 'main.html', {'projs':  projs, 'abouts':abouts})
 
 def add_project(request):
     if request.user.is_authenticated:
