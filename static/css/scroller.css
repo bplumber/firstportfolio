@@ -684,4 +684,11 @@ footer p {
     .col-md-8{
       padding-right: 75px;
     }
+    .about-image{
+      overflow: hidden;
+      border-radius: 50%;
+      height: 150px;
+      width: 200px;
+      border: 3px solid white;
+    }
   }
