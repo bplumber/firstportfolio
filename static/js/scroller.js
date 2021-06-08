@@ -83,3 +83,18 @@ scrollLinks.forEach((link) => {
 });
 // calculate heights
 
+$(window).on("orientationchange",function(event){
+  $( "#orientation" ).text( "This device is in " + event.orientation + " mode!" );  
+  if(event.orientation=="landscape")
+  {
+      $("#extra [id^='switch']").removeClass( "col-md-4" );
+      $("#extra [id^='switch']").addClass( "col-lg-4 m-auto" );
+  }
+  else if(event.orientation=="portrait")
+  {
+      $("#extra [id^='switch']").removeClass( "col-lg-4 m-auto" );
+      $("#extra [id^='switch']").addClass( "col-md-4" );
+  }
+});
+$( window ).orientationchange();
+
