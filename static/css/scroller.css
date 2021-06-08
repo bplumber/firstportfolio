@@ -635,14 +635,6 @@ footer p {
     margin-bottom: 25px;
   } */
 
-  .left{
-    margin-left: -100px;
-  }
-
-  .col-md-8{
-    margin-left: 100px;
-  }
-
 
   #hyper:link {
     color: black;
@@ -675,20 +667,4 @@ footer p {
   }
   .nayatemp{
     color:#474787;
-  }
-
- @media screen and (max-width: 600px) {
-    .left{
-      padding-left: 230px;
-    }
-    .col-md-8{
-      padding-right: 75px;
-    }
-    .about-image{
-      overflow: hidden;
-      border-radius: 50%;
-      height: 150px;
-      width: 200px;
-      border: 3px solid white;
-    }
   }
