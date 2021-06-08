@@ -304,6 +304,14 @@ header {
   background:
     url(../img/naqiya.gif) center/cover no-repeat;
 }
+@media screen and (max-width: 650px){
+header {
+  background:
+  url(../img/vertical.gif) center/cover no-repeat;
+}
+}
+
+
 .banner {
   min-height: 100vh;
   display: grid;
