@@ -685,3 +685,14 @@ footer p {
   padding-left: 5%;
 }
 
+@media screen and (max-width: 420px) {
+    .back{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+  }
+  .front{
+    max-width: 100%;
+  }
+  }
