@@ -695,4 +695,7 @@ footer p {
   .front{
     max-width: 100%;
   }
+.inner p{
+    font-size: 18px;
+  }
   }
