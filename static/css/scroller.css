@@ -195,7 +195,7 @@ Scroll
 */
 /* navbar */
 nav {
-  background: var(--clr-white);
+  background: transparent;
   padding: 1rem 1.5rem;
   z-index: 999;
 }
@@ -675,3 +675,13 @@ footer p {
   .nayatemp{
     color:#474787;
   }
+
+.containers{
+  max-width: 300px;
+}
+
+.row{
+  max-width: 100%;
+  padding-left: 5%;
+}
+
