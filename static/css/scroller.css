@@ -301,14 +301,17 @@ nav {
 /* hero */
 header {
   min-height: 100vh;
-  background:
-    url(../img/naqiya.gif) center/cover no-repeat;
+  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+    url(./naqiya.gif) center/cover no-repeat;
+    background-size: 100% 100%;
 }
-@media screen and (max-width: 650px){
-header {
-  background:
-  url(../img/vertical.gif) center/cover no-repeat;
-}
+
+@media screen and (max-width: 650px) {
+  header {
+    background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+      url(vertical-final.gif) center/cover no-repeat;
+      background-size: 100% 100%;
+  }
 }
 
 
@@ -399,8 +402,6 @@ footer p {
 .about-image{
 	overflow: hidden;
 	border-radius: 50%;
-	height: 300px;
-	width: 200px;
 	border: 3px solid white;
 }
 
